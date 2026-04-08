@@ -1,3 +1,10 @@
+---
+layout: remonstrance
+title: "Open Letter of Remonstrance to Congress"
+recipient: "To the Congress of the United States of America"
+author: "A Concerned Citizen"
+---
+
 # Open Letter of Remonstrance to Congress Regarding Abdication of Duty
 
 **To the Congress of the United States of America,**
