@@ -153,7 +153,3 @@ I do not expect you to change because of the elegance of my prose; I expect you 
 Until you act with the courage and the honor that your station requires; until you act once more as the true representatives of a free people; I shall continue to hold you in the contempt you have earned.
 
 ---
-
-*I remain, with the utmost gravity and a most settled indignation,*
-
-*Your most insulted and indignant fellow-citizen,*
