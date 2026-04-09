@@ -1,435 +1,3 @@
-
-
-A Formal Remonstrance to the Houses of Congress Concerning the Abandonment of Enumerated Powers and the Path to Autocracy Gentlemen of the Senate and of the House of Representatives, It is a circumstance which no man of sense can overlook, and which no sophistry of party spirit can long conceal, tha
-
-pasted
-
-Put in markdown
-
-7:47 PM
-
-Created a file, read a file
-Created a file, read a file
-Here's your document formatted in Markdown, with section headers, bold subheadings within the catalogue of derelictions, italicized titles (Federalist No. 45, Mos Maiorum, etc.), and a clean closing signature block.
-
-
-Remonstrance
-Document · MD 
-I want a different theme for the page
-
-8:04 PM
-What kind of theme are you going for?
-
-
-
-
-remonstrance.html
-117 lines
-
-html
-
-Use the files
-
-8:06 PM
-I can see you have an existing HTML template with a parchment theme. Let me read the frontend design skill first, then restyle it.
-
-
-Reading frontend design skill
-Reading frontend design skill
-Now let me build a dramatically restyled version of the document — going for a dark, authoritative broadsheet aesthetic that matches the gravitas of the content.
-
-
-Creating a dramatically restyled HTML version of the remonstrance with a dark broadsheet aesthetic
-Creating a dramatically restyled HTML version of the remonstrance with a dark broadsheet aesthetic
-
-Creating a dramatically restyled HTML version of the remonstrance with a dark broadsheet aesthetic
-html
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Formal Remonstrance to the Houses of Congress</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --ink: #0d0d0d;
-            --paper: #f5f0e8;
-            --red: #6b0000;
-            --rule: #2a2a2a;
-            --muted: #3a3530;
-        }
-
-        html { font-size: 17px; }
-
-        body {
-            background-color: #1a1614;
-            font-family: 'Libre Baskerville', serif;
-            color: var(--ink);
-            display: flex;
-            justify-content: center;
-            padding: 3rem 1rem 5rem;
-            min-height: 100vh;
-        }
-
-        .broadsheet {
-            background-color: var(--paper);
-            max-width: 860px;
-            width: 100%;
-            padding: 0;
-            position: relative;
-        }
-
-        /* Aged paper texture via layered box shadows */
-        .broadsheet::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 28px,
-                    rgba(0,0,0,0.025) 28px,
-                    rgba(0,0,0,0.025) 29px
-                );
-            pointer-events: none;
-        }
-
-        /* ── MASTHEAD ── */
-        .masthead {
-            border-bottom: 3px double var(--rule);
-            padding: 2.5rem 3rem 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .masthead-rule-top {
-            border-top: 1px solid var(--rule);
-            border-bottom: 1px solid var(--rule);
-            padding: 4px 0;
-            margin-bottom: 1.5rem;
-        }
-        .masthead-rule-top::before {
-            content: '';
-            display: block;
-            border-top: 1px solid var(--rule);
-            border-bottom: 1px solid var(--rule);
-            height: 3px;
-        }
-
-        .masthead-eyebrow {
-            font-family: 'IM Fell English SC', serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.25em;
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
-
-        h1 {
-            font-family: 'IM Fell English', serif;
-            font-size: clamp(2rem, 5vw, 3.6rem);
-            font-weight: 400;
-            line-height: 1.05;
-            color: var(--ink);
-            margin-bottom: 1rem;
-        }
-
-        .masthead-sub {
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--muted);
-            border-top: 1px solid #bbb;
-            border-bottom: 1px solid #bbb;
-            padding: 0.5rem 2rem;
-            display: inline-block;
-            margin: 0.5rem 0;
-        }
-
-        .masthead-dateline {
-            font-family: 'IM Fell English SC', serif;
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            color: var(--muted);
-            margin-top: 1rem;
-        }
-
-        /* ── BODY ── */
-        .body-wrap {
-            padding: 2rem 3rem 3rem;
-            columns: 2;
-            column-gap: 2.5rem;
-            column-rule: 1px solid #bbb;
-        }
-
-        /* Salutation breaks columns */
-        .salutation {
-            column-span: all;
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            font-size: 1.05rem;
-            text-align: center;
-            color: var(--muted);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #ccc;
-        }
-
-        /* Drop cap on first paragraph */
-        .drop-cap::first-letter {
-            font-family: 'IM Fell English', serif;
-            font-size: 5.5rem;
-            float: left;
-            line-height: 0.78;
-            padding-right: 0.12em;
-            padding-top: 0.08em;
-            color: var(--red);
-            font-weight: 400;
-        }
-
-        p {
-            font-size: 0.92rem;
-            line-height: 1.75;
-            text-align: justify;
-            hyphens: auto;
-            margin-bottom: 0.85rem;
-            color: var(--ink);
-        }
-
-        /* ── SECTION HEADERS ── */
-        h2 {
-            font-family: 'IM Fell English SC', serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            color: var(--ink);
-            border-top: 2px solid var(--rule);
-            border-bottom: 1px solid #aaa;
-            padding: 0.4rem 0;
-            margin: 1.5rem 0 0.75rem;
-            column-span: all;
-            text-align: center;
-        }
-
-        /* ── PULL QUOTE ── */
-        blockquote {
-            column-span: all;
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            font-size: 1.35rem;
-            line-height: 1.4;
-            color: var(--red);
-            text-align: center;
-            border-top: 2px solid var(--red);
-            border-bottom: 2px solid var(--red);
-            padding: 1rem 2rem;
-            margin: 1.5rem 0;
-        }
-
-        /* ── BOLD inline ── */
-        strong {
-            font-weight: 700;
-            font-style: normal;
-            color: var(--ink);
-        }
-
-        em {
-            font-style: italic;
-        }
-
-        /* ── CLOSING ── */
-        .closing {
-            column-span: all;
-            border-top: 1px solid #aaa;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            text-align: right;
-        }
-
-        .closing p {
-            text-align: right;
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .closing .sig-name {
-            font-family: 'IM Fell English SC', serif;
-            font-style: normal;
-            letter-spacing: 0.08em;
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-top: 0.75rem;
-            border-top: 1px solid #999;
-            display: inline-block;
-            padding-top: 0.5rem;
-        }
-
-        /* ── FOOTER ── */
-        .folio {
-            border-top: 3px double var(--rule);
-            padding: 0.75rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .folio span {
-            font-family: 'IM Fell English SC', serif;
-            font-size: 0.62rem;
-            letter-spacing: 0.15em;
-            color: var(--muted);
-        }
-
-        .folio-ornament {
-            font-size: 1.1rem;
-            color: var(--red);
-        }
-
-        @media (max-width: 640px) {
-            .body-wrap { columns: 1; padding: 1.5rem; }
-            .masthead { padding: 1.5rem; }
-            h1 { font-size: 2rem; }
-            .folio { flex-direction: column; gap: 0.5rem; text-align: center; }
-        }
-
-        @media print {
-            body { background: white; padding: 0; }
-            .broadsheet { box-shadow: none; }
-        }
-    </style>
-</head>
-<body>
-
-<article class="broadsheet">
-
-    <header class="masthead">
-        <div class="masthead-rule-top"></div>
-        <p class="masthead-eyebrow">Submitted to the Senate &amp; House of Representatives of the United States</p>
-        <h1>A Formal Remonstrance<br>to the Houses of Congress</h1>
-        <p class="masthead-sub">Concerning the Abandonment of Enumerated Powers and the Path to Autocracy</p>
-        <p class="masthead-dateline">Anno Domini MMXXVI &nbsp;&#10022;&nbsp; Published by a Concerned Citizen &nbsp;&#10022;&nbsp; Richmond, Virginia</p>
-    </header>
-
-    <div class="body-wrap">
-
-        <p class="salutation">Gentlemen of the Senate and of the House of Representatives,</p>
-
-        <p class="drop-cap">It is a circumstance which no man of sense can overlook, and which no sophistry of party spirit can long conceal, that the present disturbances convulsing our national councils are but the natural and inevitable fruit of a most long-standing, deliberate, and systematic abandonment of the boundaries set by our founding charter.</p>
-
-        <p>To observe those who sit in the seats of the Legislature — men who have for decades treated the enumerated powers of Article I as mere suggestions to be bypassed whenever the winds of political convenience blow in an unfavourable direction — now raising a clamour against the Executive branch, is a spectacle of hypocrisy so brazen and so thoroughly transparent, that it must provoke even the most dormant spirit to a state of absolute and righteous resentment.</p>
-
-        <p>I am writing this because my patience is quite exhausted. To witness the choreographed outrage, the practiced frowns, and the hollow, reverberating speeches concerning executive overreach is, to a thinking mind, genuinely nauseating. You are standing in the wreckage of a fire which you yourselves helped to kindle, acting as if you were the very persons attempting to preserve the building from a conflagration.</p>
-
-        <p>For decades, you have been the ones handing over the keys to our national house. You have unbolted the windows and dismantled the very locks that were designed to keep power in its proper place. And now that the door has been locked from the inside by a strength you encouraged, you have the nerve to act like victims of a sudden and unforeseen theft.</p>
-
-        <h2>I. &nbsp; The Nature of the Republic: Enumerated Powers &amp; the Philosophy of Restraint</h2>
-
-        <p>We were meant to be a Republic — a system built on fixed law and partitioned authority, not an unlimited democracy where the majority may act without restraint, nor a system where the Executive may govern by decree. Mr. Madison, writing in <em>Federalist No. 45</em>, made the condition of our Union perfectly clear: the powers delegated to the federal government were to be few and defined, while those remaining with the states were to be numerous and indefinite.</p>
-
-        <p>The Constitution is not an elastic document; it is a list. If a power is not found upon that list, you do not possess it. It is as simple, and as profound, as that. Yet, you have treated this sacred charter as if it were a common rag, tossing it aside whenever a policy was too difficult to pass through the proper channels or an election was too close to risk a difficult vote.</p>
-
-        <p>Every time you interpret a clause to mean its opposite, or hide behind the General Welfare to fund projects that the Founders would have found absurd, you are eroding the soil in which liberty grows. When you allow the Executive to interpret its own powers, or when you delegate your law-making authority to unelected boards and commissions, you are committing a slow suicide of the legislative branch.</p>
-
-        <h2>II. &nbsp; The Usurpation of the People's Voice &amp; the Betrayal of Representation</h2>
-
-        <p>Perhaps the most alarming of your derelictions is the manner in which you have hijacked the very concept of representation. You sit in your chambers and claim to speak with the voice of the people. Yet, it is a voice of your own manufacture — a synthetic clamour produced by political consultants. You have mistaken the echoes of your own rhetoric for the genuine will of the citizens you were elected to serve.</p>
-
-        <p>By substituting the actual needs and the quiet, steady liberty of the public for a series of choreographed political dramas, you have ceased to be representatives and have become a self-serving faction. You no longer represent the people; you merely use them as a rhetorical shield to protect your own institutional vanity.</p>
-
-        <blockquote>"A representative who ignores the constitutional limits placed upon him by the people is no longer their servant, but their master in disguise."</blockquote>
-
-        <h2>III. &nbsp; The Financial Subjugation of the States &amp; the Proliferation of Fraud</h2>
-
-        <p>We must now examine a corruption of the most extensive and debilitating nature — the systematic use of the federal treasury to purchase the sovereignty of the several States. Our Union was designed as a federation of independent republics, each a laboratory of liberty, each a check upon the central authority. Yet, through the insidious mechanism of grants-in-aid and federal subsidies, you have transformed these proud States into mere administrative departments of a national government.</p>
-
-        <p>You offer the people's own money back to their local governments, but only upon the condition that they submit to edicts you have no constitutional right to impose. Whether it be in the instruction of their youth, the policing of their streets, or the management of their very lands, the States have been taught to look to Washington with the eyes of a mendicant rather than the dignity of a sovereign.</p>
-
-        <p>This torrent of federal gold, disconnected as it is from the local accountability of the taxpayer, has birthed a culture of fraud that would shock the conscience of any honest man. In every State of this Union, we see funds intended for the relief of the suffering diverted to the pockets of political favorites. We see a vast and labyrinthine system of social programs where the administrative costs exceed the benefits provided, and where the lack of audit is not an accident but a design.</p>
-
-        <h2>IV. &nbsp; The Roman Parallel: The Senate That Built the Throne</h2>
-
-        <p>History does not repeat, but it certainly rhymes — and you are currently reciting the final verses of the Roman Republic with a fidelity that is truly alarming. Rome's fall was not the work of a single day, nor the triumph of a single man. It was a slow, institutional rot that began in the very heart of its government: the Senate.</p>
-
-        <p>In 133 B.C., when the Gracchi brothers
-Claude's response was interrupted
-I want the theme separate from the markdown. Just do the theme not the markdown
-
-8:07 PM
-
-Reading the uploaded HTML file to understand its structure
-Reading the uploaded HTML file to understand its structure
-Got it — I'll replace only the CSS/fonts/theme, keeping all the Liquid template variables and HTML structure exactly as-is.
-
-
-Created 2 files, ran a command, read a file
-Created 2 files, ran a command, read a file
-
-Restyled theme only — structure and Liquid variables unchanged
-remonstrance.html
-
-Remove existing file
-
-Script
-
-Restyled theme only — structure and Liquid variables unchanged
-remonstrance.html
-
-Presented file
-Done
-All Liquid variables ({{ page.title }}, {{ content }}, {{ page.author }}, etc.) and the HTML structure are untouched. What changed:
-
-Removed Tailwind entirely
-Fonts swapped to IM Fell English (display/headings) + Libre Baskerville (body) — a proper period-appropriate serif pairing
-Background dark near-black 
-#1c1814 instead of gray
-Paper warm aged 
-#f4efe3 with a deep red top border accent, subtle ruled-line texture, and dramatic shadow
-Drop cap now uses IM Fell English in deep red
-Section headers rendered in small caps with double-rule treatment
-Footer in spaced small caps
-
-Remonstrance
-Code · HTML 
-That is my current theme. I want something different
-
-8:09 PM
-What vibe are you going for?
-
-Q: What direction should the new theme go?
-A: Newspaper / broadsheet (columnar, dense, editorial)
-
-8:09 PM
-
-Ran a command, created a file, read a file
-Ran a command, created a file, read a file
-All Liquid variables untouched. Here's what changed for the broadsheet look:
-
-Nameplate in UnifrakturMaguntia blackletter — classic newspaper flag treatment
-3-column layout with column rules, tight justified text, and small body type (0.82rem)
-Edition bar with location, volume, and issue number flanking the masthead
-Byline bar below the headline
-Section headings span all columns with uppercase tracked lettering
-Playfair Display for headlines at heavy weight, Source Serif 4 light for body — a proper editorial pairing
-Newsprint warm off-white background with grain overlay
-
-Remonstrance
-Code · HTML 
-
-Want to be notified when Claude responds?
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Remonstrance · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -441,7 +9,7 @@ Copy
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
         :root {
             --newsprint: #f0ece0;
             --ink: #0e0e0e;
@@ -449,14 +17,14 @@ Copy
             --muted: #444;
             --col-gap: 1.4rem;
         }
- 
+
         body {
             background-color: #2a2a2a;
             font-family: 'Source Serif 4', serif;
             color: var(--ink);
             padding: 2.5rem 1rem 4rem;
         }
- 
+
         /* ── BROADSHEET WRAPPER ── */
         .paper {
             background-color: var(--newsprint);
@@ -466,7 +34,7 @@ Copy
             box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 20px 50px rgba(0,0,0,0.5);
             position: relative;
         }
- 
+
         /* Newsprint grain overlay */
         .paper::before {
             content: '';
@@ -476,7 +44,7 @@ Copy
             pointer-events: none;
             opacity: 0.5;
         }
- 
+
         /* ── NAMEPLATE ── */
         .nameplate {
             border-top: 5px solid var(--rule);
@@ -485,7 +53,7 @@ Copy
             text-align: center;
             margin-bottom: 0;
         }
- 
+
         .nameplate-flag {
             font-family: 'UnifrakturMaguntia', cursive;
             font-size: clamp(2.4rem, 6vw, 4.2rem);
@@ -493,7 +61,7 @@ Copy
             color: var(--ink);
             letter-spacing: 0.01em;
         }
- 
+
         /* ── EDITION BAR ── */
         .edition-bar {
             display: flex;
@@ -509,7 +77,7 @@ Copy
             text-transform: uppercase;
             color: var(--muted);
         }
- 
+
         .edition-bar span:nth-child(2) {
             font-size: 0.55rem;
             letter-spacing: 0.05em;
@@ -517,7 +85,7 @@ Copy
             font-style: italic;
             color: var(--muted);
         }
- 
+
         /* ── HEADLINE ── */
         header {
             text-align: center;
@@ -525,7 +93,7 @@ Copy
             border-bottom: 3px double var(--rule);
             margin-bottom: 0;
         }
- 
+
         h1 {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
@@ -536,7 +104,7 @@ Copy
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
- 
+
         header p {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -549,7 +117,7 @@ Copy
             display: inline-block;
             margin-top: 0.4rem;
         }
- 
+
         /* ── BYLINE ── */
         .byline-bar {
             display: flex;
@@ -564,7 +132,7 @@ Copy
             font-family: 'Source Serif 4', serif;
             font-weight: 300;
         }
- 
+
         /* ── COLUMNAR BODY ── */
         .content {
             column-count: 3;
@@ -576,13 +144,13 @@ Copy
             hyphens: auto;
             padding-top: 0.8rem;
         }
- 
+
         .content p {
             margin-bottom: 0.6rem;
             color: var(--ink);
             font-weight: 300;
         }
- 
+
         /* Drop cap */
         .content p:first-of-type::first-letter {
             float: left;
@@ -594,7 +162,7 @@ Copy
             font-weight: 700;
             color: var(--ink);
         }
- 
+
         /* Section headings span all columns */
         .content h2 {
             column-span: all;
@@ -610,7 +178,7 @@ Copy
             margin: 1rem 0 0.6rem;
             color: var(--ink);
         }
- 
+
         .content h3 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -619,15 +187,15 @@ Copy
             margin: 0.8rem 0 0.3rem;
             color: var(--ink);
         }
- 
+
         .content strong {
             font-weight: 600;
         }
- 
+
         .content em {
             font-style: italic;
         }
- 
+
         /* Pull quote spanning columns */
         .content blockquote,
         .content > div.pull {
@@ -642,7 +210,7 @@ Copy
             margin: 0.8rem 0;
             color: var(--ink);
         }
- 
+
         /* ── CLOSING ── */
         .content > div:last-child {
             column-span: all;
@@ -653,14 +221,14 @@ Copy
             font-style: italic;
             color: var(--muted);
         }
- 
+
         .signature-line {
             border-top: 1px solid var(--ink);
             width: 180px;
             margin-top: 1.8rem;
             margin-bottom: 0.3rem;
         }
- 
+
         /* ── FOOTER ── */
         footer {
             border-top: 3px double var(--rule);
@@ -668,7 +236,7 @@ Copy
             padding-top: 0.5rem;
             text-align: center;
         }
- 
+
         footer p {
             font-family: 'Source Serif 4', serif;
             font-size: 0.55rem;
@@ -677,17 +245,17 @@ Copy
             color: var(--muted);
             font-weight: 300;
         }
- 
+
         @media (max-width: 680px) {
             .content { column-count: 2; }
             .paper { padding: 1.2rem 1rem 2rem; }
         }
- 
+
         @media (max-width: 440px) {
             .content { column-count: 1; }
             h1 { font-size: 1.6rem; }
         }
- 
+
         @media print {
             body { background: white; padding: 0; }
             .paper { box-shadow: none; max-width: 100%; }
@@ -695,162 +263,44 @@ Copy
     </style>
 </head>
 <body>
- 
+
     <div class="paper">
- 
+
         <div class="nameplate">
             <div class="nameplate-flag">The American Remonstrance</div>
         </div>
- 
+
         <div class="edition-bar">
             <span>Richmond, Virginia</span>
             <span>{{ "now" | date: "%Y" }} &mdash; A Broadside for the Concerned Citizen</span>
             <span>Vol. I &nbsp; No. 1</span>
         </div>
- 
+
         <header>
             <h1>{{ page.title }}</h1>
             <p>{{ page.recipient }}</p>
         </header>
- 
+
         <div class="byline-bar">
             <span>By: {{ page.author | default: "A Concerned Citizen" }}</span>
             <span>&#10022;</span>
             <span>Published Anno Domini {{ "now" | date: "%Y" }}</span>
         </div>
- 
+
         <article class="content">
             {{ content }}
- 
+
             <div>
                 <p>Respectfully submitted,</p>
                 <div class="signature-line"></div>
                 <p>{{ page.author | default: "A Concerned Citizen" }}</p>
             </div>
         </article>
- 
+
         <footer>
             <p>Published in the Year of Our Lord {{ "now" | date: "%Y" }} &nbsp;&#10022;&nbsp; All Rights Reserved</p>
         </footer>
- 
-    </div>
- 
-</body>
-</html>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --parchment: #fdfaf3;
-            --ink: #1a1a1a;
-            --seal-red: #8b0000;
-        }
 
-        body {
-            background-color: #e5e7eb;
-            font-family: 'Crimson Pro', serif;
-            color: var(--ink);
-            line-height: 1.6;
-        }
-
-        .paper {
-            background-color: var(--parchment);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .paper::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, transparent, rgba(139, 0, 0, 0.2), transparent);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: -0.02em;
-        }
-
-        /* Styling for Markdown-generated content */
-        .content p:first-of-type::first-letter {
-            float: left;
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            line-height: 1;
-            padding-right: 12px;
-            color: var(--seal-red);
-            font-weight: 700;
-        }
-
-        .content h2 {
-            display: block;
-            text-align: center;
-            margin: 2rem 0 1rem;
-            font-weight: 600;
-            font-variant: small-caps;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid #ddd;
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.25rem;
-        }
-
-        .content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .signature-line {
-            border-top: 1px solid var(--ink);
-            width: 250px;
-            margin-top: 3rem;
-        }
-
-        @media print {
-            body { background: white; }
-            .paper { box-shadow: none; margin: 0; width: 100%; }
-        }
-    </style>
-</head>
-<body class="py-12 px-4">
-
-    <div class="max-w-3xl mx-auto paper p-8 md:p-16 rounded-sm">
-        
-        <header class="text-center mb-12 border-b-2 border-double border-gray-300 pb-8">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">{{ page.title }}</h1>
-            <p class="italic text-gray-700 text-lg">{{ page.recipient }}</p>
-        </header>
-
-        <article class="text-xl text-justify content">
-            {{ content }}
-
-            <div class="mt-16">
-                <p>Respectfully submitted,</p>
-                <div class="signature-line"></div>
-                <p class="mt-2 font-semibold">{{ page.author | default: "A Concerned Citizen" }}</p>
-            </div>
-        </article>
-
-        <footer class="mt-24 text-center text-sm text-gray-500 italic">
-            <p>Published in the Year of Our Lord {{ "now" | date: "%Y" }}</p>
-        </footer>
     </div>
 
 </body>
