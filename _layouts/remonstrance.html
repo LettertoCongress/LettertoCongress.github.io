@@ -6,254 +6,173 @@
     <title>{{ page.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --newsprint: #f0ece0;
-            --ink: #0e0e0e;
-            --rule: #111;
-            --muted: #444;
-            --col-gap: 1.4rem;
+            --vellum: #f7f2e4;
+            --ink: #1e1a14;
+            --faded: #6b5e47;
+            --crease: #d9cdb4;
         }
 
         body {
-            background-color: #2a2a2a;
-            font-family: 'Source Serif 4', serif;
+            background-color: #3b3530;
+            font-family: 'Cormorant Garamond', serif;
             color: var(--ink);
-            padding: 2.5rem 1rem 4rem;
+            padding: 3rem 1rem 5rem;
         }
 
-        /* ── BROADSHEET WRAPPER ── */
         .paper {
-            background-color: var(--newsprint);
-            max-width: 900px;
+            background-color: var(--vellum);
+            max-width: 640px;
             margin: 0 auto;
-            padding: 2rem 2.5rem 3rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 20px 50px rgba(0,0,0,0.5);
+            padding: 4rem 4.5rem 5rem;
+            box-shadow:
+                0 1px 2px rgba(0,0,0,0.08),
+                0 8px 32px rgba(0,0,0,0.35),
+                inset 0 0 120px rgba(180,150,90,0.07);
             position: relative;
         }
 
-        /* Newsprint grain overlay */
+        /* Faint horizontal line texture like aged laid paper */
         .paper::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            background-image: repeating-linear-gradient(
+                180deg,
+                transparent,
+                transparent 24px,
+                rgba(0,0,0,0.022) 24px,
+                rgba(0,0,0,0.022) 25px
+            );
             pointer-events: none;
-            opacity: 0.5;
         }
 
-        /* ── NAMEPLATE ── */
-        .nameplate {
-            border-top: 5px solid var(--rule);
-            border-bottom: 3px double var(--rule);
-            padding: 0.5rem 0 0.6rem;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        .nameplate-flag {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: clamp(2.4rem, 6vw, 4.2rem);
-            line-height: 1;
-            color: var(--ink);
-            letter-spacing: 0.01em;
-        }
-
-        /* ── EDITION BAR ── */
-        .edition-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--rule);
-            padding: 0.3rem 0;
-            margin-bottom: 0.6rem;
-            font-family: 'Source Serif 4', serif;
-            font-size: 0.58rem;
-            font-weight: 300;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .edition-bar span:nth-child(2) {
-            font-size: 0.55rem;
-            letter-spacing: 0.05em;
-            text-transform: none;
-            font-style: italic;
-            color: var(--muted);
-        }
-
-        /* ── HEADLINE ── */
+        /* ── HEADER ── */
         header {
             text-align: center;
-            padding: 0.8rem 0 1rem;
-            border-bottom: 3px double var(--rule);
-            margin-bottom: 0;
+            margin-bottom: 2.5rem;
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: clamp(1.6rem, 4.5vw, 3rem);
-            line-height: 1.08;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            line-height: 1.25;
             color: var(--ink);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
         }
 
         header p {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--muted);
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-            padding: 0.25rem 2rem;
-            display: inline-block;
-            margin-top: 0.4rem;
-        }
-
-        /* ── BYLINE ── */
-        .byline-bar {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid var(--rule);
-            font-size: 0.6rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted);
-            font-family: 'Source Serif 4', serif;
+            font-family: 'Cormorant SC', serif;
             font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--faded);
+            margin-top: 0.5rem;
         }
 
-        /* ── COLUMNAR BODY ── */
+        /* thin rule under header */
+        header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            border-bottom: 1px solid var(--crease);
+            margin: 1.2rem auto 0;
+        }
+
+        /* ── BODY ── */
         .content {
-            column-count: 3;
-            column-gap: var(--col-gap);
-            column-rule: 1px solid #999;
-            font-size: 0.82rem;
-            line-height: 1.65;
-            text-align: justify;
-            hyphens: auto;
-            padding-top: 0.8rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--ink);
         }
 
         .content p {
-            margin-bottom: 0.6rem;
-            color: var(--ink);
-            font-weight: 300;
+            margin-bottom: 1.1rem;
+            text-align: justify;
+            hyphens: auto;
         }
 
         /* Drop cap */
         .content p:first-of-type::first-letter {
             float: left;
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            font-weight: 400;
+            font-style: italic;
             line-height: 0.82;
             padding-right: 0.08em;
-            padding-top: 0.04em;
-            font-weight: 700;
-            color: var(--ink);
+            padding-top: 0.05em;
+            color: var(--faded);
         }
 
-        /* Section headings span all columns */
+        /* Section headings — understated, centered small caps */
         .content h2 {
-            column-span: all;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
+            font-family: 'Cormorant SC', serif;
+            font-weight: 300;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
             text-align: center;
-            border-top: 2px solid var(--rule);
-            border-bottom: 1px solid #999;
-            padding: 0.3rem 0;
-            margin: 1rem 0 0.6rem;
-            color: var(--ink);
+            color: var(--faded);
+            margin: 2.2rem 0 1rem;
         }
 
         .content h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-weight: 400;
-            font-size: 0.95rem;
-            margin: 0.8rem 0 0.3rem;
-            color: var(--ink);
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--faded);
+            margin: 1.5rem 0 0.5rem;
         }
 
-        .content strong {
-            font-weight: 600;
-        }
-
-        .content em {
-            font-style: italic;
-        }
-
-        /* Pull quote spanning columns */
-        .content blockquote,
-        .content > div.pull {
-            column-span: all;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            text-align: center;
-            border-top: 2px solid var(--rule);
-            border-bottom: 2px solid var(--rule);
-            padding: 0.6rem 2rem;
-            margin: 0.8rem 0;
-            color: var(--ink);
-        }
+        .content strong { font-weight: 600; }
+        .content em { font-style: italic; }
 
         /* ── CLOSING ── */
-        .content > div:last-child {
-            column-span: all;
-            border-top: 1px solid #aaa;
-            margin-top: 1.2rem;
-            padding-top: 1rem;
-            font-size: 0.78rem;
+        .content > div {
+            margin-top: 3rem;
             font-style: italic;
-            color: var(--muted);
+            color: var(--faded);
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .content > div p {
+            text-align: left;
+            margin-bottom: 0.3rem;
         }
 
         .signature-line {
-            border-top: 1px solid var(--ink);
-            width: 180px;
-            margin-top: 1.8rem;
-            margin-bottom: 0.3rem;
+            border-top: 1px solid var(--crease);
+            width: 160px;
+            margin-top: 2rem;
+            margin-bottom: 0.4rem;
         }
 
         /* ── FOOTER ── */
         footer {
-            border-top: 3px double var(--rule);
-            margin-top: 1.5rem;
-            padding-top: 0.5rem;
+            margin-top: 3.5rem;
             text-align: center;
         }
 
         footer p {
-            font-family: 'Source Serif 4', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--muted);
+            font-family: 'Cormorant SC', serif;
             font-weight: 300;
+            font-size: 0.62rem;
+            letter-spacing: 0.18em;
+            color: var(--crease);
         }
 
-        @media (max-width: 680px) {
-            .content { column-count: 2; }
-            .paper { padding: 1.2rem 1rem 2rem; }
-        }
-
-        @media (max-width: 440px) {
-            .content { column-count: 1; }
-            h1 { font-size: 1.6rem; }
+        @media (max-width: 520px) {
+            .paper { padding: 2.5rem 1.8rem 3rem; }
+            h1 { font-size: 1.4rem; }
         }
 
         @media print {
@@ -266,26 +185,10 @@
 
     <div class="paper">
 
-        <div class="nameplate">
-            <div class="nameplate-flag">The American Remonstrance</div>
-        </div>
-
-        <div class="edition-bar">
-            <span>Richmond, Virginia</span>
-            <span>{{ "now" | date: "%Y" }} &mdash; A Broadside for the Concerned Citizen</span>
-            <span>Vol. I &nbsp; No. 1</span>
-        </div>
-
         <header>
             <h1>{{ page.title }}</h1>
             <p>{{ page.recipient }}</p>
         </header>
-
-        <div class="byline-bar">
-            <span>By: {{ page.author | default: "A Concerned Citizen" }}</span>
-            <span>&#10022;</span>
-            <span>Published Anno Domini {{ "now" | date: "%Y" }}</span>
-        </div>
 
         <article class="content">
             {{ content }}
@@ -298,7 +201,7 @@
         </article>
 
         <footer>
-            <p>Published in the Year of Our Lord {{ "now" | date: "%Y" }} &nbsp;&#10022;&nbsp; All Rights Reserved</p>
+            <p>Published in the Year of Our Lord {{ "now" | date: "%Y" }}</p>
         </footer>
 
     </div>
